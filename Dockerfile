@@ -7,12 +7,12 @@ RUN apt-get -qqy update \
     && apt-get -qqy --no-install-recommends install \
         sudo \
         supervisor \
-        xvfb x11vnc novnc websockify \
+        xvfb x11nc nonc websockify \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html
+RUN cp /usr/share/nonc/nc.html /usr/share/nonc/index.html
 
 COPY scripts/* /opt/bin/
 
